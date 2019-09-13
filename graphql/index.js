@@ -29,9 +29,7 @@ const runHandler = (request, context, handler) =>
 
 module.exports = async (context, request) => {
     //We need an async function to wait to MongoDB connection
-    context.log(process.env.MONGO_DB_URL);
     const client = await MongoClient.connect(process.env.MONGO_DB_URL);
-    context.log('Connected successfully to MongoDB');
     db = client.db('realfoodingdb');
 
     const server = new ApolloServer({

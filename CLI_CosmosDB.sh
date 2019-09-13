@@ -1,8 +1,8 @@
 #variables
-$SUBSCRIPTION="Microsoft Azure Internal Consumption"
-$LOCATION="northeurope"
-$RESOURCE_GROUP="myfeedapp"
-$COSMOSDB="myfeedappdb"
+SUBSCRIPTION="Microsoft Azure Internal Consumption"
+LOCATION="northeurope"
+RESOURCE_GROUP="myfeedapp"
+COSMOSDB="myfeedappdb"
 
 #login
 az login
@@ -14,4 +14,4 @@ az account set --subscription $SUBSCRIPTION
 az group create --name $RESOURCE_GROUP --location $LOCATION
 
 #create a cosmosdb
-az cosmosdb create --name $COSMOSDB --resource-group $RESOURCE_GROUP --kind MongoDB 
+az cosmosdb create --name $COSMOSDB --resource-group $RESOURCE_GROUP --kind MongoDB
