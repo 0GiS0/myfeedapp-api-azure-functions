@@ -1,8 +1,6 @@
-// const { ApolloServer, PubSub } = require('apollo-server'); ES6
-const ApolloServer = require('apollo-server-azure-functions').ApolloServer;
-const PubSub = require('apollo-server').PubSub;
-// const { MongoClient } = require('mongodb'); ES6
-const MongoClient = require('mongodb').MongoClient;
+const { ApolloServer } = require('apollo-server-azure-functions');
+const { PubSub } = require('apollo-server');
+const { MongoClient } = require('mongodb');
 
 //1. Schema
 const typeDefs = require('./src/schema');
@@ -33,8 +31,8 @@ module.exports = async (context, request) => {
     const client = await MongoClient.connect('mongodb://localhost:27017');
     context.log('Connected successfully to MongoDB');
     db = client.db('realfoodingdb');
-    
-    const server = new ApolloServer({    
+
+    const server = new ApolloServer({
         typeDefs,
         resolvers,
         context: {
@@ -44,7 +42,10 @@ module.exports = async (context, request) => {
     });
 
     const handler = server.createHandler({
-        cors: { credentials: true, origin: true }
+        cors: {
+            origin: '*',
+            credentials: true,
+        }
     });
 
     const response = await runHandler(request, context, handler)
