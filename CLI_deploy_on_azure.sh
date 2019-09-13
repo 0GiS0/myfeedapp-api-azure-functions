@@ -28,4 +28,4 @@ az functionapp cors add --resource-group $RESOURCE_GROUP --name $FUNCTION_APP --
 az functionapp cors show -g $RESOURCE_GROUP -n $FUNCTION_APP
 
 #Delete all
-az group delete --name $RESOURCE_GROUP
+az group delete --name $RESOURCE_GROUP --yes --no-wait
