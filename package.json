@@ -7,7 +7,7 @@
     "mongo_docker": "docker start mongodb",
     "seed-db": "seed -u mongodb://myfeedappdb:Fq4MYTpzcpmENpOmckaY1KINgMbe3Rl2dn7qIseenF7beG1dulgKha5gtW7t9RMsv0oUHCpsJpf3xt0dEDqpEA==@myfeedappdb.documents.azure.com:10255/realfoodingdb?ssl=true --drop-database ./data/",
     "start": "npm run mongo_docker && func start --javascript --cors *",
-    "deploy": "func azure functionapp publish $FUNCTION_APP --javascript",
+    "deploy": "func azure functionapp publish myfeedappfunc --javascript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

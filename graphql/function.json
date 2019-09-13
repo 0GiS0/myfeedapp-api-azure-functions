@@ -1,21 +1,22 @@
 {
-    "disabled": false,
-    "entryPoint": "index",
-    "bindings": [
-      {
-        "authLevel": "function",
-        "type": "httpTrigger",
-        "direction": "in",
-        "name": "req",
-        "methods": [
-          "get",
-          "post"
-        ]
-      },
-      {
-        "type": "http",
-        "direction": "out",
-        "name": "$return"
-      }
-    ]
-  }
+  "disabled": false,
+  "entryPoint": "index",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post",
+        "options"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
