@@ -1,5 +1,5 @@
 #variables
-SUBSCRIPTION="Microsoft Azure Internal Consumption"
+SUBSCRIPTION="YOUR_SUBSCRIPTION_NAME"
 LOCATION="northeurope"
 RESOURCE_GROUP="myfeedapp"
 COSMOSDB="myfeedappdb"

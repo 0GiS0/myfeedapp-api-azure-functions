@@ -1,5 +1,5 @@
 #variables
-SUBSCRIPTION="Microsoft Azure Internal Consumption"
+SUBSCRIPTION="YOUR_SUBSCRIPTION_NAME"
 LOCATION="northeurope"
 RESOURCE_GROUP="myfeedapp"
 STORAGE_ACCOUNT="myfeedappstore"
@@ -9,7 +9,7 @@ FUNCTION_APP="myfeedappfunc"
 az login
 
 #select subscription
-az account set --subscription "Microsoft Azure Internal Consumption"
+az account set --subscription $SUBSCRIPTION
 
 #create a resource group
 az group create --name $RESOURCE_GROUP --location $LOCATION

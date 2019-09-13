@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mongo_docker": "docker start mongodb",
-    "seed-db": "seed -u mongodb://myfeedappdb:ba3dtrts4Oox0xb6me7awwHRD7Aka421f1m7Lj2bVElf7kRHYthA7P7eVnI8CdeEKeVqm7HdpSikOQ7nJWTp3g%3D%3D@myfeedappdb.documents.azure.com:10255/realfoodingdb?ssl=true --drop-database ./data/",
+    "seed-db": "seed -u YOUR_COSMOSDB_CONNECTION_STRING_WITH_DB --drop-database ./data/",
     "start": "npm run mongo_docker && func start --javascript --cors *",
     "deploy": "func azure functionapp publish myfeedappfunc --javascript",
     "test": "echo \"Error: no test specified\" && exit 1"
