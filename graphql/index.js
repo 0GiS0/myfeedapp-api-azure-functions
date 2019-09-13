@@ -1,6 +1,7 @@
 const { ApolloServer } = require('apollo-server-azure-functions');
 const { PubSub } = require('apollo-server');
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
 //1. Schema
 const typeDefs = require('./src/schema');
@@ -28,7 +29,8 @@ const runHandler = (request, context, handler) =>
 
 module.exports = async (context, request) => {
     //We need an async function to wait to MongoDB connection
-    const client = await MongoClient.connect('mongodb://localhost:27017');
+    context.log(process.env.MONGO_DB_URL);
+    const client = await MongoClient.connect(process.env.MONGO_DB_URL);
     context.log('Connected successfully to MongoDB');
     db = client.db('realfoodingdb');
 
